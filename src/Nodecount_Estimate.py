@@ -1,15 +1,15 @@
 import numpy as np
 
+#error = [1e-11, 1e-10, 1e-9, 1e-8, 1e-7, 1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 1e-0]
 error = ["1E-9", "1E-8", "1E-7", "1E-6", "1E-5", "1E-4", "1E-3", "1E-2", "1E-1"]
 
 def nodecount_estimate(fname):
 
     nodecount = []
     qf0 = []
-    with open("log/sz/sz_qf/"+fname+"-1E-1-qf.log") as inputfile:
+    with open("../log/REL/"+fname+"-1E-1-qf.txt") as inputfile:
         for line in inputfile:
-            if ("SZ" not in line) & ("compress" not in line) & ("func" not in line):
-                qf0.append(float(line.strip('\n')))
+            qf0.append(float(line.strip('\n')))
 
     s = set()
     for j in qf0:
@@ -20,22 +20,20 @@ def nodecount_estimate(fname):
                 s.add(int(j))
     nodecount.append(len(s))
 
-    for i in range(1,len(error)-1):
+    for i in range(0,len(error)-1):
         qf0=[]
-        f_name0 = fname+"-1E-"+str(i)+"-qf.log"
-        print(f_name0)
-        with open("log/sz/sz_qf/"+f_name0) as inputfile:
+        f_name0 = fname+"-1e-"+str(i)+"-qf.txt"
+
+        with open(f_name0) as inputfile:
             for line in inputfile:
-                if ("SZ" not in line) & ("compress" not in line) & ("func" not in line):
-                    qf0.append(float(line.strip('\n')))
+                qf0.append(float(line.strip('\n')))
 
         qf1=[]
-        f_name1 = fname+"-1E-"+str(i+1)+"-qf.log"
+        f_name1 = fname+"-1e-"+str(i+1)+"-qf.txt"
 
-        with open("log/sz/sz_qf/"+f_name1) as inputfile:
+        with open(f_name1) as inputfile:
             for line in inputfile:
-                if ("SZ" not in line) & ("compress" not in line) & ("func" not in line):
-                    qf1.append(float(line.strip('\n')))
+                qf1.append(float(line.strip('\n')))
 
         s = set()
         for j in qf1:
