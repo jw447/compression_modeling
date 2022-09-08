@@ -1,0 +1,17 @@
+cfgFile=sz.config
+[SZ] Reading SZ configuration file (sz.config) ...
+checkradius=6.553434
+(max)intvCapacity=65536
+optimized quanti_intl=65536
+nodeCount=7
+encodeSize=144720
+treeByteSize=50
+count_hit=515004
+count_missed=63876
+outlierSize=207266
+totalByteLength=352085
+timecost, 0.021042, seconds
+done
+Input file size: 4631040
+Output file size: 9922
+sz compression ratio: 466.74461

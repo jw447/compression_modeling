@@ -1,3 +1,9 @@
+# data
+*.dat
+
+# Dependencies
+external/
+
 # Prerequisites
 *.d
 
