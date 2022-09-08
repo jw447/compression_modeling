@@ -1,5 +1,7 @@
 # data
 *.dat
+*.sz
+*.zfp
 
 # Dependencies
 external/
