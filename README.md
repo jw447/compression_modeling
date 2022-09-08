@@ -9,3 +9,6 @@ Author: Jinzhen Wang (jw447@njit.edu)
 Last modified on 09/08/2022.
 
 
+## Run compression modeling
+
+python sz_modeling.py
